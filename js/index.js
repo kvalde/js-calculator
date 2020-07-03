@@ -2,7 +2,7 @@
 (function () {
   "use strict";
 
-  var el = function (element) {
+  let el = function (element) {
     if (element.charAt(0) === "#") {
       return document.querySelector(element);
     }
@@ -10,7 +10,7 @@
     return document.querySelectorAll(element);
   };
 
-  var viewer = el("#viewer"), 
+  let viewer = el("#viewer"), 
     equals = el("#equals"),
     nums = el(".num"), 
     ops = el(".ops"), 
@@ -19,7 +19,7 @@
     resultNum, 
     operator; 
 
-  var setNum = function () {
+  let setNum = function () {
     if (resultNum) {
       theNum = this.getAttribute("data-num");
       resultNum = "";
@@ -30,7 +30,7 @@
     viewer.innerHTML = theNum;
   };
 
-  var moveNum = function () {
+  let moveNum = function () {
     oldNum = theNum;
     theNum = "";
     operator = this.getAttribute("data-ops");
@@ -38,7 +38,7 @@
     equals.setAttribute("data-result", "");
   };
 
-  var displayNum = function () {
+  let displayNum = function () {
     oldNum = parseFloat(oldNum);
     theNum = parseFloat(theNum);
 
@@ -80,7 +80,7 @@
     theNum = resultNum;
   };
 
-  var clearAll = function () {
+  let clearAll = function () {
     oldNum = "";
     theNum = "";
     viewer.innerHTML = "0";
